@@ -1,0 +1,31 @@
+<h2>Employee List</h2>
+
+<!-- Search Bar -->
+<input type="text" class="form-control mb-3" placeholder="Search by name..." [(ngModel)]="searchText" />
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email Id</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of filteredEmployees(); let i = index">
+      <!-- Editable Fields -->
+      <td><input type="text" [(ngModel)]="employee.firstname" class="form-control" /></td>
+      <td><input type="text" [(ngModel)]="employee.Lastname" class="form-control" /></td>
+      <td><input type="email" [(ngModel)]="employee.emailid" class="form-control" /></td>
+
+      <!-- Save Button (Optional, changes are auto-bound) -->
+      <!-- <td>
+        <button class="btn btn-primary" (click)="saveEmployee(i)">Save</button>
+      </td> -->
+    </tr>
+  </tbody>
+</table>
+
+<!-- Display Updated Array (for debugging purposes) -->
+<pre>{{ employees | json }}</pre>

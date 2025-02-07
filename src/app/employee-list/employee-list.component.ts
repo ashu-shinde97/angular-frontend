@@ -46,6 +46,7 @@ export class EmployeeListComponent implements OnInit {
   //   // Save the updated employees array to localStorage
   //   localStorage.setItem('employees', JSON.stringify(this.employees));
   // }
+  // //adeded new line
 }
 
 
